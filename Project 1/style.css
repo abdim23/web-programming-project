@@ -1,5 +1,6 @@
 body {
 	margin: 20px;	
+	background-color: lightgreen;
 }
 h1 {
 	text-align: center;
@@ -51,12 +52,23 @@ ul.contact li a {
 	color: blue;
 }
 div.question {
-	width: 50%;
+	background-color: lightblue;
+	width: 400px;
 	border: 5px solid black;
-	padding: 20px;
+	padding: 30px;
+	position: relative;
+	-webkit-animation-name: questAnimation;
+    -webkit-animation-duration: 2s; 
+  	animation-name: questAnimation;
+  	animation-duration: 2s;
+  	animation-fill-mode: forwards;
+  	animation-timing-function: linear;
 }
+
+
+
 p.question5Num {
-	font-size: 18px;
+	font-size: 24px;
 }
 p.question6Num {
 	font-size: 18px;
@@ -70,28 +82,33 @@ p.question6Num a {
 p.question6Num a:visited {
 	color: #000000;
 }
+
+
+
 p.question {
 	font-family: "Arial";
 	font-size: 20px;
 }
-ul.question {
-	list-style-type: none;
+ol.question {
+	list-style-type: upper-alpha;
 	margin: 0;
 	padding: 0;
 	font-family: "Arial";
 }
-ul.question li a {
+ol.question li a {
 	display: block;
-	width: 200px;
-	padding: 14px;
+	border: 1px solid black;
+
+	width: 300px;
+	padding: 20px;
 	background-color: #dddddd;
 	text-decoration: none;
 	color:inherit;
 }
-ul.question li a:hover {
+ol.question li a:hover {
 	background-color: #66B9BF;
 }
-ul.question li a:visited {
+ol.question li a:visited {
 	color: #000000;
 }
 ul.navigation {
@@ -102,9 +119,9 @@ ul.navigation {
 	overflow: hidden;
 	background-color: #07889B;
 	color: #FFFFFF;
-	-webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+	-webkit-animation-name: navAnimation; /* Safari 4.0 - 8.0 */
     -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
-  	animation-name: example;
+  	animation-name: navAnimation;
   	animation-duration: 4s;
   	animation-iteration-count: infinite;
 }
@@ -127,7 +144,7 @@ ul.navigation li a:hover {
 }
 
 /* Safari 4.0 - 8.0 */
-@-webkit-keyframes example {
+@-webkit-keyframes navAnimation {
   0%   {background-color: red;}
   25%  {background-color: yellow;}
   50%  {background-color: blue;}
@@ -135,9 +152,20 @@ ul.navigation li a:hover {
 }
 
 /* Standard syntax */
-@keyframes example {
+@keyframes navAnimation {
   0%   {background-color: red;}
   25%  {background-color: yellow;}
   50%  {background-color: blue;}
   100% {background-color: green;}
+}
+@-webkit-keyframes questAnimation {
+  from {left: 0px;transform: rotate(0deg);}
+  to {left: 250px;transform: rotate(360deg);}
+}
+
+/* Standard syntax */
+@keyframes questAnimation {
+  	
+  from {left: 0px;transform: rotate(0deg);}
+  to {left: 250px;transform: rotate(360deg);}
 }
